@@ -1,0 +1,225 @@
+Functions
+---------
+
+(System)
+--------
+
+function IntToStr(I: LongInt): String;
+function StrToInt(S: String): LongInt;
+function StrToIntDef(S: String; Def: LongInt): LongInt;
+function Copy(S: string; IFrom, ICount: LongInt): String;
+function Pos(SubStr, S: String): LongInt;
+function GetArrayLength(var V: Array): Integer;
+function StrGet(var S: String; I: Integer): Char;
+function UpperCase(S: String): String;
+function LowerCase(S: String): String;
+function Trim(S: String): String;
+function Length(S: String): LongInt;
+function Sin(E: Extended): Extended;
+function Cos(E: Extended): Extended;
+function Sqrt(E: Extended): Extended;
+function Round(E: Extended): LongInt;
+function Trunc(E: Extended): LongInt;
+function Int(E: Extended): LongInt;
+function Pi: Extended;
+function Abs(E: Extended): Extended;
+function StrToFloat(S: String): Extended;
+function FloatToStr(E: Extended): String;
+function PadL(S: String; I: LongInt): String;
+function PadR(S: String; I: LongInt): String;
+function PadZ(S: String; I: LongInt): String;
+function Replicate(C: Char; I: LongInt): String;
+function StringOfChar(C: Char; I: LongInt): String;
+
+
+Basic
+-----
+
+function GetSubString(MainString: String; SubStringNumber: Integer): String;
+function RandomInteger(Limit: Integer): Integer;
+function CardToStr(Card: Cardinal): String;
+function StrToCard(Str: String): Cardinal;
+function GetDate: Cardinal;
+function GetTimeOfDay: Integer;
+function ScriptGetTickCount: Cardinal;
+
+
+HTTP
+----
+
+function QueryParameter(HTTPConnection: Cardinal; Name: String): String;
+function QueryIP(HTTPConnection: Cardinal): String;
+
+
+UOSLServer
+----------
+
+function IsServerActive: Boolean;
+function GetPrimitiveObjectReference(ObjectReference: TObjectReference): Cardinal;
+function GetObjectType(ObjectReference: TObjectReference): Integer;
+function GetObjectReference(ObjectType: Integer; PrimitiveObjectReference: Cardinal): TObjectReference;
+function GetObject(ObjectType: Integer; ID: Cardinal): TObjectReference;
+function ListObjects(ObjectType: Integer): TObjectArray;
+function ListObjectsNearLocation(ObjectType: Integer; X, Y: Word; Distance: Cardinal): TObjectArray;
+function ListObjectsNearLocationAccurate(ObjectType: Integer; X, Y: Word; Z: ShortInt; Distance: Cardinal): TObjectArray;
+function ListItemsInContainer(Container: TObjectReference): TObjectArray;
+function ListEquippedItems(ObjectReference: TObjectReference): TObjectArray;
+function ListOnlinePlayers: TObjectArray;
+function GetMainContainer(Item: TObjectReference): TObjectReference;
+function GetAmount(Item: TObjectReference): Word;
+function GetItemType(Item: TObjectReference): Cardinal;
+function GetColor(Item: TObjectReference): Word;
+function IsContainer(Item: TObjectReference): Boolean;
+function IsWalkable(Item: TObjectReference): Byte;
+function IsMoveable(Item: TObjectReference): Boolean;
+function IsVisible(Item: TObjectReference): Boolean;
+function IsStackable(Item: TObjectReference): Boolean;
+function GetItemLighting(Item: TObjectReference): Byte;
+function IsContainedIn(Item: TObjectReference): TObjectReference;
+function IsEquippedBy(Item: TObjectReference): TObjectReference;
+function GetWeight(Item: TObjectReference): Word;
+function IsRangedWeapon(Item: TObjectReference): Boolean;
+function IsMeleeWeapon(Item: TObjectReference): Boolean;
+function IsArmor(Item: TObjectReference): Boolean;
+function GetWeaponSpeed(Weapon: TObjectReference): Byte;
+function GetWeaponDamage(Weapon: TObjectReference): Byte;
+function GetArmorStrength(Armor: TObjectReference): Byte;
+function GetEvent(NPC: TObjectReference): TEvent;
+function GetNPCType(NPC: TObjectReference): Cardinal;
+function RequestInput(Player: TObjectReference): String;
+function IsOnline(Player: TObjectReference): Boolean;
+function IsAlive(Player: TObjectReference): Boolean;
+function IsCriminal(ObjectReference: TObjectReference): Boolean;
+function IsAtWar(Player: TObjectReference): Boolean;
+function GetPlayerRealName(Player: TObjectReference): String;
+function GetPlayerHomepage(Player: TObjectReference): String;
+function GetPlayerEMailAddress(Player: TObjectReference): String;
+function GetPlayerPCInfo(Player: TObjectReference): String;
+function GetObjectX(ObjectReference: TObjectReference): Word;
+function GetObjectY(ObjectReference: TObjectReference): Word;
+function GetObjectZ(ObjectReference: TObjectReference): ShortInt;
+function GetObjectXMain(ObjectReference: TObjectReference): Word;
+function GetObjectYMain(ObjectReference: TObjectReference): Word;
+function GetObjectZMain(ObjectReference: TObjectReference): ShortInt;
+function GetSex(ObjectReference: TObjectReference): Integer;
+function GetGraphic(ObjectReference: TObjectReference): Word;
+function GetName(ObjectReference: TObjectReference): String;
+function GetFacing(ObjectReference: TObjectReference): Byte;
+function GetStrength(ObjectReference: TObjectReference): Byte;
+function GetDexterity(ObjectReference: TObjectReference): Byte;
+function GetIntelligence(ObjectReference: TObjectReference): Byte;
+function GetCPropStringValue(ObjectReference: TObjectReference; Name: String): String;
+function GetCPropCardinalValue(ObjectReference: TObjectReference; Name: String): Cardinal;
+function GetCPropIntegerValue(ObjectReference: TObjectReference; Name: String): Integer;
+function GetExperience(ObjectReference: TObjectReference): Cardinal;
+function GetLevel(ObjectReference: TObjectReference): Cardinal;
+function GetSkill(ObjectReference: TObjectReference; Skill: Integer): Byte;
+function CPropExists(ObjectReference: TObjectReference; Name: String): Boolean;
+function CheckDistance(X1, X2, Y1, Y2: Word; Z1, Z2: ShortInt): Cardinal;
+function CheckObjectDistance(ObjectReference1, ObjectReference2: TObjectReference): Cardinal;
+function CheckObjectToCoordinatesDistance(ObjectReference:  TObjectReference; X, Y: Word; Z: ShortInt): Cardinal;
+function GetHits(ObjectReference: TObjectReference): Byte;
+function GetMana(ObjectReference: TObjectReference): Byte;
+function GetFatigue(ObjectReference: TObjectReference): Byte;
+function IsPrivileged(ObjectReference: TObjectReference): Boolean;
+function IsUnhidden(ObjectReference: TObjectReference): Boolean;
+function GetScriptName(ObjectReference: TObjectReference): String;
+function GetEquipmentByLayer(ObjectReference: TObjectReference; Layer: Byte): TObjectReference;
+function GetObjectID(ObjectReference: TObjectReference): Cardinal;
+function CreateObject(ObjectType: Integer; TypeID: Cardinal; X, Y: Word; Z: ShortInt): TObjectReference;
+function ObjectExistsByID(ObjectType: Integer; ID: Cardinal): Boolean;
+function CheckObjectType(ID: Cardinal): Integer;
+function GetEventType(Event: TEvent): Integer;
+function GetEventIntegerValue(Event: TEvent): Integer;
+function GetEventStringValue(Event: TEvent): String;
+function GetEventCardinalValue(Event: TEvent): Cardinal;
+function CheckLOS(X1, X2, Y1, Y2: Word; Z1, Z2: ShortInt): Boolean;
+function GetGPropStringValue(Name: String): String;
+function GetGPropCardinalValue(Name: String): Cardinal;
+function GetGPropIntegerValue(Name: String): Integer;
+function GPropExists(Name: String): Boolean;
+function GetTileGraphic(X, Y: Word): Word;
+function GetStaticsGraphics(X, Y: Word; Z: ShortInt): TArrayOfWord;
+function GetDirectionTo(FromX, FromY, ToX, ToY: Word): Byte;
+function FindItemInContainer(Container: TObjectReference; TypeID: Cardinal; DeepSearch: Boolean): TObjectReference;
+function GetIP(Player: TObjectReference): String;
+function ObjectExists(ObjectReference: TObjectReference): Boolean;
+function GetPassword(Player: TObjectReference): String;
+
+
+PrimitiveUOSLServer
+-------------------
+
+function PrimitiveGetObject(ObjectType: Integer; ID: Cardinal): Cardinal;
+function PrimitiveListObjects(ObjectType: Integer): TPrimitiveObjectArray;
+function PrimitiveListObjectsNearLocation(ObjectType: Integer; X, Y: Word; Distance: Cardinal): TPrimitiveObjectArray;
+function PrimitiveListObjectsNearLocationAccurate(ObjectType: Integer; X, Y: Word; Z: ShortInt; Distance: Cardinal): TPrimitiveObjectArray;
+function PrimitiveListItemsInContainer(Container: Cardinal): TPrimitiveObjectArray;
+function PrimitiveListEquippedItems(ObjectType: Integer; ObjectReference: Cardinal): TPrimitiveObjectArray;
+function PrimitiveListOnlinePlayers: TPrimitiveObjectArray;
+function PrimitiveGetMainContainer(Item: Cardinal): Cardinal;
+function PrimitiveGetAmount(Item: Cardinal): Word;
+function PrimitiveGetItemType(Item: Cardinal): Cardinal;
+function PrimitiveGetColor(Item: Cardinal): Word;
+function IsEquippedByObjectType(Item: Cardinal): Integer;
+function PrimitiveIsContainer(Item: Cardinal): Boolean;
+function PrimitiveIsWalkable(Item: Cardinal): Byte;
+function PrimitiveIsMoveable(Item: Cardinal): Boolean;
+function PrimitiveIsVisible(Item: Cardinal): Boolean;
+function PrimitiveIsStackable(Item: Cardinal): Boolean;
+function PrimitiveGetItemLighting(Item: Cardinal): Byte;
+function PrimitiveIsContainedIn(Item: Cardinal): Cardinal;
+function PrimitiveIsEquippedBy(Item: Cardinal): Cardinal;
+function PrimitiveGetWeight(Item: Cardinal): Word;
+function PrimitiveIsRangedWeapon(Item: Cardinal): Boolean;
+function PrimitiveIsMeleeWeapon(Item: Cardinal): Boolean;
+function PrimitiveIsArmor(Item: Cardinal): Boolean;
+function PrimitiveGetWeaponSpeed(Weapon: Cardinal): Byte;
+function PrimitiveGetWeaponDamage(Weapon: Cardinal): Byte;
+function PrimitiveGetArmorStrength(Armor: Cardinal): Byte;
+function PrimitiveGetEvent(NPC: Cardinal): TEvent;
+function PrimitiveGetNPCType(NPC: Cardinal): Cardinal;
+function PrimitiveRequestInput(Player: Cardinal): String;
+function PrimitiveIsOnline(Player: Cardinal): Boolean;
+function PrimitiveIsAlive(Player: Cardinal): Boolean;
+function PrimitiveIsCriminal(ObjectType: Integer; ObjectReference: Cardinal): Boolean;
+function PrimitiveIsAtWar(Player: Cardinal): Boolean;
+function PrimitiveGetPlayerRealName(Player: Cardinal): String;
+function PrimitiveGetPlayerHomepage(Player: Cardinal): String;
+function PrimitiveGetPlayerEMailAddress(Player: Cardinal): String;
+function PrimitiveGetPlayerPCInfo(Player: Cardinal): String;
+function PrimitiveGetObjectX(ObjectType: Integer; ObjectReference: Cardinal): Word;
+function PrimitiveGetObjectY(ObjectType: Integer; ObjectReference: Cardinal): Word;
+function PrimitiveGetObjectZ(ObjectType: Integer; ObjectReference: Cardinal): ShortInt;
+function PrimitiveGetObjectXMain(ObjectType: Integer; ObjectReference: Cardinal): Word;
+function PrimitiveGetObjectYMain(ObjectType: Integer; ObjectReference: Cardinal): Word;
+function PrimitiveGetObjectZMain(ObjectType: Integer; ObjectReference: Cardinal): ShortInt;
+function PrimitiveGetSex(ObjectType: Integer; ObjectReference: Cardinal): Integer;
+function PrimitiveGetGraphic(ObjectType: Integer; ObjectReference: Cardinal): Word;
+function PrimitiveGetName(ObjectType: Integer; ObjectReference: Cardinal): String;
+function PrimitiveGetFacing(ObjectType: Integer; ObjectReference: Cardinal): Byte;
+function PrimitiveGetStrength(ObjectType: Integer; ObjectReference: Cardinal): Byte;
+function PrimitiveGetDexterity(ObjectType: Integer; ObjectReference: Cardinal): Byte;
+function PrimitiveGetIntelligence(ObjectType: Integer; ObjectReference: Cardinal): Byte;
+function PrimitiveGetCPropStringValue(ObjectType: Integer; ObjectReference: Cardinal; Name: String): String;
+function PrimitiveGetCPropCardinalValue(ObjectType: Integer; ObjectReference: Cardinal; Name: String): Cardinal;
+function PrimitiveGetCPropIntegerValue(ObjectType: Integer; ObjectReference: Cardinal; Name: String): Integer;
+function PrimitiveGetExperience(ObjectType: Integer; ObjectReference: Cardinal): Cardinal;
+function PrimitiveGetLevel(ObjectType: Integer; ObjectReference: Cardinal): Cardinal;
+function PrimitiveGetSkill(ObjectType: Integer; ObjectReference: Cardinal; Skill: Integer): Byte;
+function PrimitiveCPropExists(ObjectType: Integer; ObjectReference: Cardinal; Name: String): Boolean;
+function PrimitiveCheckObjectToCoordinatesDistance(ObjectType: Integer; ObjectReference: Cardinal; X, Y: Word; Z: ShortInt): Cardinal;
+function PrimitiveCheckObjectDistance(ObjectType1: Integer; ObjectReference1: Cardinal; ObjectType2: Integer; ObjectReference2: Cardinal): Cardinal;
+function PrimitiveGetHits(ObjectType: Integer; ObjectReference: Cardinal): Byte;
+function PrimitiveGetMana(ObjectType: Integer; ObjectReference: Cardinal): Byte;
+function PrimitiveGetFatigue(ObjectType: Integer; ObjectReference: Cardinal): Byte;
+function PrimitiveIsPrivileged(ObjectType: Integer; ObjectReference: Cardinal): Boolean;
+function PrimitiveIsUnhidden(ObjectType: Integer; ObjectReference: Cardinal): Boolean;
+function PrimitiveGetScriptName(ObjectType: Integer; ObjectReference: Cardinal): String;
+function PrimitiveGetEquipmentByLayer(ObjectType: Integer; ObjectReference: Cardinal; Layer: Byte): Cardinal;
+function PrimitiveGetObjectID(ObjectType: Integer; ObjectReference: Cardinal): Cardinal;
+function PrimitiveCreateObject(ObjectType: Integer; TypeID: Cardinal; X, Y: Word; Z: ShortInt): Cardinal;
+function PrimitiveFindItemInContainer(Container, TypeID: Cardinal; DeepSearch: Boolean): Cardinal;
+function PrimitiveGetIP(Player: Cardinal): String;
+function PrimitiveObjectExists(ObjectType: Integer; ObjectReference: Cardinal): Boolean;
+function PrimitiveGetPassword(Player: Cardinal): String;

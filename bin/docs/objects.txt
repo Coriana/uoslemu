@@ -1,0 +1,19 @@
+Objects
+-------
+
+Every item, NPC or player is an object. There are now several ways to refer to those objects:
+
+  - ID (Cardinal): is like a serial number. Each object has its unique static ID.
+
+  - primitive object reference (Cardinal): is worth nothing if you don't know the object's type.
+                                           There's always an item, an NPC and a player sharing
+                                           the same object reference number.
+                                           Primitive object references are NOT unique and NOT static.
+
+  - object reference (TObjectReference): object references are unique but NOT static.
+
+
+"Static" means, that everytime the server restarts the same object is refered.
+"Not static" means the opposite. One time the refered player object is "Tim" and after a server restart it's "Frank".
+
+So if you want to save object reference information permanently use IDs.

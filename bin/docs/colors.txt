@@ -1,0 +1,56 @@
+Colors
+------
+
+1    light blue
+
+.
+.
+.
+
+3    dark blue
+
+.
+.
+.
+
+7    black
+
+.
+.
+.
+
+8    light blue / white
+
+.
+.
+.
+
+10   dark brown
+11   light brown
+12   brown
+
+.
+.
+.
+
+28   dark green
+29   light green
+
+.
+.
+.
+
+32   blue
+
+.
+.
+.
+
+35   purple
+36   light red
+37   dark red
+
+.
+.
+.
+

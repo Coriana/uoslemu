@@ -1,0 +1,63 @@
+Getting started
+---------------
+
+So you donwloaded this server emulator and want to do more than just test it out for a few minutes?
+I hope I can give you a little overview of what you can do and how everything works.
+
+
+Hardly first steps
+------------------
+
+People usually want to create items or NPCs in the game world.
+The commands do do this are:
+
+  - #createnpc <NPC type ID>
+
+  - #createitem <item type ID>
+
+Just take a look at the files "npcs.ini" and "items.ini" in the "types" directory.
+
+Now, what are types? Types are like blueprints. So when you use those ingame commands above you'll create
+an object which is built upon the specified blueprint.
+So for example you have ONE type for a backpack, what color it has and so on but in the game world there
+may bee hundreds of those backpack.
+
+There's a detailed explanation inside of the type files about what they have to look like.
+
+While the server is up and running all the objects are saved in memory but as soon as you shut it down
+properly all the object information is saved in the "data" folder.
+
+Although the files are human readable, I don't advice you to edit them or you might get unresolvable
+problems next time you start the server. If you want to edit those files backup ALL of them before.
+
+
+"Why is everything so empty and why can't I...?"
+------------------------------------------------
+
+...you might have asked the first time you logged in.
+
+The answer is simple: Because the game world is not fully implemented although the server core is or at least
+it should be :-).
+
+All those things like NPCs, items, skills and so on are scriptable. The server core gives you all the
+functionality to implement nearly everything you want. I did this for a small part already. Otherwise you could
+not have used those commands I told you about above.
+
+When you type in "#createitem 4" the server notices that there's a "#" at the beginning of the line,
+Then this string is split up into two parts "createitem" and "4" and if it exists, the script "createnpc"
+is started and the string "4" is handed over to the script as parameter.
+
+Just take a look at the "cmd" subdirectory of "scripts" and you'll see there's a file called "createnpc.pas".
+That's our script. As soon as it's loaded by the server the file ending is removed internally.
+
+There are some scripts the server core expects to exist, for example "onsclick".
+When you click on an NPC or player the server takes note of that and calls this script, what happens then lies in
+your hands. You just have to adjust the script.
+
+Double clicking is handled differently.
+When you double click an item the server figures it's an item and checks if there's a script attached to that item
+and if yes he starts it but also supplies the information that double clicking was involved (see events.txt for
+more information).
+
+
+To be continued...

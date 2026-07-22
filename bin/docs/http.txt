@@ -1,0 +1,8 @@
+HTTP scripts
+------------
+
+Note: server core assumptions.
+
+HTTP scripts expect one parameter:
+
+  - Parameter1: HTTP connection (Cardinal).

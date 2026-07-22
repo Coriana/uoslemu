@@ -1,0 +1,96 @@
+Miscellaneous scripts
+---------------------
+
+Note: server core assumptions.
+
+Miscellaneous scripts all expect a different set of parameter:
+
+Player := GetObjectReference(OTPLAYER, StrToCard(Parameter1));
+  Item := GetObjectReference(OTITEM, StrToCard(Parameter2));
+
+  - Parameter1:
+    - onadclick:  primitive object reference (Cardinal) to the clicking player.
+                  Should be converted to an object reference.
+    - onattack:   object type (Integer) of the attacker.
+    - oncreate:   primitive object reference (Cardinal) to the created player.
+                  Should be converted to an object reference.
+    - ondeath:    object type (Integer) of the dying NPC or player.
+    - onlogin:    primitive object reference (Cardinal) to the logged in player.
+                  Should be converted to an object reference.
+    - onlogout:   primitive object reference (Cardinal) to the logged out player.
+                  Should be converted to an object reference.
+    - onres:      primitive object reference (Cardinal) to the resurrected in player.
+                  Should be converted to an object reference.
+    - onsclick:   primitive object reference (Cardinal) to the clicking player.
+                  Should be converted to an object reference.
+    - onshutdown: nothing.
+    - onspecact:  primitive object reference (Cardinal) to the acting player.
+                  Should be converted to an object reference.
+    - onstart:    nothing.
+    - onwalk:     primitive object reference (Cardinal) to the walking player.
+                  Should be converted to an object reference.
+                
+  - Parameter2:
+    - onadclick:  object type (Integer) of the clicked object.
+    - onattack:   primitive object reference (Cardinal) to the attacker.
+                  Should be converted to an object reference.
+    - oncreate:   hair style (Integer)
+    - ondeath:    primitive object reference (Cardinal) to the dying NPC or player.
+                  Should be converted to an object reference.
+    - onlogin:    nothing.
+    - onlogout:   nothing.
+    - onres:      nothing.
+    - onsclick:   object type (Integer) of the clicked object.
+    - onshutdown: nothing
+    - onspecact:  primitive object reference (Cardinal) to the used item.
+                  Should be converted to an object reference.
+    - onstart:    nothing.
+    - onwalk:     old X coordinates of the player (Integer).
+  
+  - Parameter3:
+    - onadclick:  primitive object reference (Cardinal) to the clicked object.
+                  Should be converted to an object reference.
+    - onattack:   object type (Integer) of the defender.
+    - oncreate:   hair color (Integer).
+    - ondeath:    nothing.
+    - onlogin:    nothing.
+    - onlogout:   nothing.
+    - onres:      nothing.
+    - onsclick:   primitive object reference (Cardinal) to the clicked object.
+                  Should be converted to an object reference.
+    - onshutdown: nothing.
+    - onspecact:  either nothing, object type (Integer) of the target or the target X
+                  coordinates (Integer).
+    - onstart:    nothing.
+    - onwalk:     old Y coordinates of the player (Integer).
+  
+  - Parameter4:
+    - onadclick:  nothing.
+    - onattack:   primitive object reference (Cardinal) to the defender.
+                  Should be converted to an object reference.
+    - oncreate:   nothing.
+    - ondeath:    nothing.
+    - onlogout:   nothing.
+    - onres:      nothing.
+    - onsclick:   nothing.
+    - onshutdown: nothing.
+    - onspecact:  either nothing, primitive object reference (Cardinal) to the target or
+                  the target Y coordinates (Integer).
+    - onstart:    nothing.
+    - onwalk:     old Z coordinates of the player (Integer).
+    
+  - Parameter5:
+    - onadclick:  nothing.
+    - onattack:   nothing.
+    - oncreate:   nothing.
+    - ondeath:    nothing.
+    - onlogin:    nothing.
+    - onlogout:   nothing.
+    - onres:      nothing.
+    - onsclick:   nothing.
+    - onshutdown: nothing.
+    - onspecact:  either nothing or the target Z coordinates (Integer).
+    - onstart:    nothing.
+    - onwalk:     nothing.
+
+ 

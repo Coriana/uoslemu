@@ -1,0 +1,19 @@
+Item scripts
+------------
+
+Note: server core assumptions.
+
+Item scripts expect five parameter:
+
+  - Parameter1: primitive object reference (Cardinal) to the item receiving the event.
+                Should be converted to an object reference.
+                
+  - Parameter2: the event's type (Integer).
+  
+  - Parameter3: the event's integer value (Integer).
+  
+  - Parameter4: the event's cardinal value (Cardinal).
+  
+  - Parameter5: the event's string value.
+  
+Refer to the event documentation for more information.

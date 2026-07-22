@@ -1,0 +1,46 @@
+Scripting information:
+----------------------
+
+- Scripts are saved with a .pas ending, the part in front of the ending is the script name,
+  which is used internally.
+
+- The scripting language is Pascal.
+
+- You don't need to include "libraries". This is handled internally.
+
+- A maximum of five parameters can be given to a script on start, namely Parameter1,
+  Parameter2, Parameter3, Parameter4 and Parameter5.
+
+- The parameters are strings and have to be converted accordingly.
+
+- Important scripts are:
+  - global: is a script, in which you can place procedures, functions, constants,
+            variables or types.
+            You can even override hard coded procedures, functions, constants,
+            variables or types.
+            Every script has access to those things.
+            However you can't define something like global variables.
+            Don't place a "begin...end." satement in it.
+
+  - Miscellenaous:
+    - onattack:   is started when a player attacks an NPC or another player.
+    - oncreate.   is started when a new player character has been created.
+    - ondeath:    is started when an NPC or player dies.
+    - onlogin:    is started when a player logs in.
+    - onlogout:   is started when a player logs out.
+    - onres:      is started when a player is resurrected.
+    - onstart:    is started when the server is started.
+    - onshutdown: is started when the server is shutting down (before server
+                  activity is stopped).
+    - onwalk:     is started every step a player walks.
+    - onadclick:  is started when a player double clicks an NPC or player while
+                  pressing the ALT key.
+    - onspecact:  is started when a player double clicks a special item like a 
+                  scroll or a yellow potion (item must be in player's backpack).
+    - onsclick:   is started when a player single clicks an NPC or player.
+
+  - Skill:
+    - magic:      is started when a player wants to cast a spell (scroll / spellbook
+                  must be in player's backpack).
+    - stealing:   is started when a player fiddled (moving / removing) with an item
+                  in a NPC's or another player's backpack.

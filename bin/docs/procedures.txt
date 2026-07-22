@@ -1,0 +1,164 @@
+Procedures
+----------
+
+(System)
+--------
+
+procedure Delete(var S: String; IFrom, ICount: LongInt);
+procedure Insert(S: string; var S2: String; IPos: LongInt);
+procedure SetArrayLength(var V: Array; I: Integer);
+procedure SetLength(var S: String; L: LongInt);
+procedure StrSet(C: Char; I: Integer; var S: String);
+
+
+Basic
+-----
+
+procedure ScriptSleep(Milliseconds: Cardinal);
+
+
+HTTP
+----
+
+procedure WriteHTML(HTTPConnection: Cardinal; HTML: String);
+
+
+UOSLServer
+----------
+
+procedure PrintServerMessage(ServerMessage: String);
+procedure StartScript(ScriptType: Integer; ScriptName, Parameter1, Parameter2, Parameter3, Parameter4, Parameter5: String);
+procedure SetGProp(Name, StringValue: String; CardinalValue: Cardinal; IntegerValue: Integer);
+procedure EraseGProp(Name: String);
+procedure SaveWorldState;
+procedure ShutDown;
+procedure SetEvent(NPC: TObjectReference; EventType: Integer; IntegerValue: Integer; StringValue: String; CardinalValue: Cardinal);
+procedure EquipItem(ObjectReference, Item: TObjectReference);
+procedure UnequipItem(ObjectReference, Item: TObjectReference; X, Y: Word; Z: ShortInt);
+procedure InsertItem(Item, Container: TObjectReference; X, Y, Amount: Word);
+procedure RemoveItem(Item, Container: TObjectReference; X, Y: Word; Z: ShortInt; Amount: Word);
+procedure OpenContainer(Player, Container: TObjectReference);
+procedure SetAmount(Item: TObjectReference; Amount: Word);
+procedure SetColor(Item: TObjectReference; Color: Word);
+procedure SetMoveable(Item: TObjectReference);
+procedure SetUnMoveable(Item: TObjectReference);
+procedure SetVisible(Item: TObjectReference);
+procedure SetInvisible(Item: TObjectReference);
+procedure SetItemLighting(Item: TObjectReference; Lighting: Byte);
+procedure SetWeight(Item: TObjectReference; Weight: Word);
+procedure SetWalkable(Item: TObjectReference; Direction: Byte);
+procedure SetWeaponSpeed(Weapon: TObjectReference; WeaponSpeed: Integer);
+procedure SetWeaponDamage(Weapon: TObjectReference; WeaponDamage: Integer);
+procedure SetArmorStrength(Armor: TObjectReference; ArmorStrength: Integer);
+procedure SetSex(ObjectReference: TObjectReference; Sex: Integer);
+procedure SetGraphic(ObjectReference: TObjectReference; Graphic: Word);
+procedure SetName(ObjectReference: TObjectReference; Name: String);
+procedure SetFacing(ObjectReference: TObjectReference; Facing: Byte);
+procedure SetStrength(ObjectReference: TObjectReference; Strength: Byte);
+procedure SetDexterity(ObjectReference: TObjectReference; Dexterity: Byte);
+procedure SetIntelligence(ObjectReference: TObjectReference; Intelligence: Byte);
+procedure SetCProp(ObjectReference: TObjectReference; Name, StringValue: String; CardinalValue: Cardinal; IntegerValue: Integer);
+procedure EraseCProp(ObjectReference: TObjectReference; Name: String);
+procedure SetExperience(ObjectReference: TObjectReference; Experience: Cardinal);
+procedure SetLevel(ObjectReference: TObjectReference; Level: Byte);
+procedure SetSkill(ObjectReference: TObjectReference; Skill: Integer; SkillValue: Byte);
+procedure SetHits(ObjectReference: TObjectReference; Hits: Byte);
+procedure SetMana(ObjectReference: TObjectReference; Mana: Byte);
+procedure SetFatigue(ObjectReference: TObjectReference; Fatigue: Byte);
+procedure SetPrivileged(ObjectReference: TObjectReference);
+procedure SetUnprivileged(ObjectReference: TObjectReference);
+procedure SetUnhidden(ObjectReference: TObjectReference);
+procedure SetHidden(ObjectReference: TObjectReference);
+procedure SetInnocent(ObjectReference: TObjectReference);
+procedure SetCriminal(ObjectReference: TObjectReference);
+procedure SetScriptName(ObjectReference: TObjectReference; ScriptName: String);
+procedure MoveObject(ObjectReference: TObjectReference; X, Y: Word; Z: ShortInt);
+procedure OpenOrCloseDoor(Door: TObjectReference; Graphic: Word; XRelative, YRelative: ShortInt);
+procedure SetPlayerRealName(Player: TObjectReference; RealName: String);
+procedure SetPlayerHomepage(Player: TObjectReference; Homepage: String);
+procedure SetPlayerEMailAddress(Player: TObjectReference; EMailAddress: String);
+procedure SetPlayerPCInfo(Player: TObjectReference; PCInfo: String);
+procedure SetDead(Player: TObjectReference);
+procedure SetAlive(Player: TObjectReference);
+procedure Walk(NPC: TObjectReference; Direction: Byte);
+procedure Attack(NPC, ObjectReference: TObjectReference);
+procedure DeleteObject(ObjectReference: TObjectReference);
+procedure PlayAnimationPrivate(Player: TObjectReference; ObjectReference: TObjectReference; Animation: Integer);
+procedure PlayAnimation(ObjectReference: TObjectReference; Animation: Integer);
+procedure PlaySoundEffectPrivate(Player: TObjectReference; SoundEffect: Word);
+procedure PlaySoundEffect(X, Y: Word; SoundEffect: Word);
+procedure SetLightLevelPrivate(Player: TObjectReference; LightLevel: Byte);
+procedure SetLightLevel(LightLevel: Byte);
+procedure SendText(TextType: Integer; ObjectReference, Player: TObjectReference; Text: String; R, G, B: Byte);
+procedure Kick(Player: TObjectReference);
+procedure Unstack(Item: TObjectReference; X, Y: Word; Z: ShortInt; Amount: Word);
+procedure AddByte(var Packet: TArrayOfByte; Value: Byte);
+procedure AddWord(var Packet: TArrayOfByte; Value: Word);
+procedure AddDWord(var Packet: TArrayOfByte; Value: DWord);
+procedure SendPacket(var Packet: TArrayOfByte; Player: TObjectReference);
+procedure SetPassword(Player: TObjectReference; Password: String);
+
+
+PrimitiveUOSLServer
+-------------------
+
+procedure PrimitiveSetEvent(NPC: Cardinal; EventType: Integer; IntegerValue: Integer; StringValue: String; CardinalValue: Cardinal);
+procedure PrimitiveEquipItem(ObjectType: Integer; ObjectReference, Item: Cardinal);
+procedure PrimitiveUnequipItem(ObjectType: Integer; ObjectReference, Item: Cardinal; X, Y: Word; Z: ShortInt);
+procedure PrimitiveInsertItem(Item, Container: Cardinal; X, Y, Amount: Word);
+procedure PrimitiveRemoveItem(Item, Container: Cardinal; X, Y: Word; Z: ShortInt; Amount: Word);
+procedure PrimitiveOpenContainer(Player, Container: Cardinal);
+procedure PrimitiveSetAmount(Item: Cardinal; Amount: Word);
+procedure PrimitiveSetColor(Item: Cardinal; Color: Word);
+procedure PrimitiveSetMoveable(Item: Cardinal);
+procedure PrimitiveSetUnMoveable(Item: Cardinal);
+procedure PrimitiveSetVisible(Item: Cardinal);
+procedure PrimitiveSetInvisible(Item: Cardinal);
+procedure PrimitiveSetItemLighting(Item: Cardinal; Lighting: Byte);
+procedure PrimitiveSetWeight(Item: Cardinal; Weight: Word);
+procedure PrimitiveSetWalkable(Item: Cardinal; Direction: Byte);
+procedure PrimitiveSetWeaponSpeed(Weapon: Cardinal; WeaponSpeed: Integer);
+procedure PrimitiveSetWeaponDamage(Weapon: Cardinal; WeaponDamage: Integer);
+procedure PrimitiveSetArmorStrength(Armor: Cardinal; ArmorStrength: Integer);
+procedure PrimitiveSetSex(ObjectType: Integer; ObjectReference: Cardinal; Sex: Integer);
+procedure PrimitiveSetGraphic(ObjectType: Integer; ObjectReference: Cardinal; Graphic: Word);
+procedure PrimitiveSetName(ObjectType: Integer; ObjectReference: Cardinal; Name: String);
+procedure PrimitiveSetFacing(ObjectType: Integer; ObjectReference: Cardinal; Facing: Byte);
+procedure PrimitiveSetStrength(ObjectType: Integer; ObjectReference: Cardinal; Strength: Byte);
+procedure PrimitiveSetDexterity(ObjectType: Integer; ObjectReference: Cardinal; Dexterity: Byte);
+procedure PrimitiveSetIntelligence(ObjectType: Integer; ObjectReference: Cardinal; Intelligence: Byte);
+procedure PrimitiveSetCProp(ObjectType: Integer; ObjectReference: Cardinal; Name, StringValue: String; CardinalValue: Cardinal; IntegerValue: Integer);
+procedure PrimitiveEraseCProp(ObjectType: Integer; ObjectReference: Cardinal; Name: String);
+procedure PrimitiveSetExperience(ObjectType: Integer; ObjectReference: Cardinal; Experience: Cardinal);
+procedure PrimitiveSetLevel(ObjectType: Integer; ObjectReference: Cardinal; Level: Byte);
+procedure PrimitiveSetSkill(ObjectType: Integer; ObjectReference: Cardinal; Skill: Integer; SkillValue: Byte);
+procedure PrimitiveSetHits(ObjectType: Integer; ObjectReference: Cardinal; Hits: Byte);
+procedure PrimitiveSetMana(ObjectType: Integer; ObjectReference: Cardinal; Mana: Byte);
+procedure PrimitiveSetFatigue(ObjectType: Integer; ObjectReference: Cardinal; Fatigue: Byte);
+procedure PrimitiveSetPrivileged(ObjectType: Integer; ObjectReference: Cardinal);
+procedure PrimitiveSetUnprivileged(ObjectType: Integer; ObjectReference: Cardinal);
+procedure PrimitiveSetUnhidden(ObjectType: Integer; ObjectReference: Cardinal);
+procedure PrimitiveSetHidden(ObjectType: Integer; ObjectReference: Cardinal);
+procedure PrimitiveSetInnocent(ObjectType: Integer; ObjectReference: Cardinal);
+procedure PrimitiveSetCriminal(ObjectType: Integer; ObjectReference: Cardinal);
+procedure PrimitiveSetScriptName(ObjectType: Integer; ObjectReference: Cardinal; ScriptName: String);
+procedure PrimitiveMoveObject(ObjectType: Integer; ObjectReference: Cardinal; X, Y: Word; Z: ShortInt);
+procedure PrimitiveOpenOrCloseDoor(Door: Cardinal; Graphic: Word; XRelative, YRelative: ShortInt);
+procedure PrimitiveSetPlayerRealName(Player: Cardinal; RealName: String);
+procedure PrimitiveSetPlayerHomepage(Player: Cardinal; Homepage: String);
+procedure PrimitiveSetPlayerEMailAddress(Player: Cardinal; EMailAddress: String);
+procedure PrimitiveSetPlayerPCInfo(Player: Cardinal; PCInfo: String);
+procedure PrimitiveSetDead(Player: Cardinal);
+procedure PrimitiveSetAlive(Player: Cardinal);
+procedure PrimitiveWalk(NPC: Cardinal; Direction: Byte);
+procedure PrimitiveAttack(NPC: Cardinal; ObjectType: Integer; ObjectReference: Cardinal);
+procedure PrimitiveDeleteObject(ObjectType: Integer; ObjectReference: Cardinal);
+procedure PrimitivePlayAnimationPrivate(Player: Cardinal; ObjectType: Integer; ObjectReference: Cardinal; Animation: Integer);
+procedure PrimitivePlayAnimation(ObjectType: Integer; ObjectReference: Cardinal; Animation: Integer);
+procedure PrimitivePlaySoundEffectPrivate(Player: Cardinal; SoundEffect: Word);
+procedure PrimitiveSetLightLevelPrivate(Player: Cardinal; LightLevel: Byte);
+procedure PrimitiveSendText(TextType, ObjectType: Integer; ObjectReference, Player: Cardinal; Text: String; R, G, B: Byte);
+procedure PrimitiveKick(Player: Cardinal);
+procedure PrimitiveUnstack(Item: Cardinal; X, Y: Word; Z: ShortInt; Amount: Word);
+procedure PrimitiveSendPacket(var Packet: TArrayOfByte; Player: Cardinal);
+procedure PrimitiveSetPassword(Player: Cardinal; Password: String);

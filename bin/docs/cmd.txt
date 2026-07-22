@@ -1,0 +1,13 @@
+Command scripts
+---------------
+
+Note: server core assumptions.
+
+Command scripts expect two parameters:
+
+  - Parameter1: primitive object reference (Cardinal) to the player calling the command.
+                Should be converted to an object reference.
+  
+  - Parameter2: the command parameter. This can be split into several ones ("1 5 6 test" -> "1", "5", "6", "test")
+                in order to catch more than one command parameter.
+ 

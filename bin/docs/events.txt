@@ -1,0 +1,91 @@
+Events
+------
+
+Events are a way to exchange information between the core and scripts in order to handle triggers.
+An event always contains the following information:
+
+  - type: there's a list in constants.txt and more information below.
+
+  - cardinal value: contains a number (Cardinal).
+
+  - integer value: contains a number (Integer).
+
+  - string value: contains a string, so if you need to transmitt more information
+                  then two numbers and a string you can put everything into this string
+                  and split it up in the receiving script.
+
+
+Items and NPCs are actually the receivers of events but handle them differently.
+Everytime an item receives an event the script attached to that item is called and the event is handed over
+to the script in the scripts parameters (see item.txt).
+
+This can't be done with NPCs as they have a continous "life" (NPC scripts should only be stared once by the core).
+So events need to be handled in a different way than they are with items.
+
+SetEvent() "sends" an event to an NPC which can receive by calling GetEvent().
+The event object returned by GetEvent() can then be inspected by using GetEventType(), GetEventIntegerValue(),
+GetEventCardinalValue() and GetEventStringValue().
+
+The core (standard) events are explained below:
+
+  - ETNONE: no event. That should only occur if you call GetEvent() and the NPC's event queue is empty.
+
+  - ETDOUBLECLICKED: double click event.
+      - cardinal value: a primitive object reference to the clicking player.
+      - integer value: nothing.
+      - string value: nothing.
+
+  - ETITEMGIVEN: this event is sent to an NPC when he's given an item (that was not stolen just before).
+      - cardinal value: a primitive object reference to the given item.
+      - integer value: object type of the donator.
+      - string value: a primitive object reference to the donator. Must be converted from string to be used.
+
+  - ETATTACKED: this event is sent to an NPC when he's attacked.
+      - cardinal value: a primitive object reference to the attacker.
+      - integer value: object type of the attacker.
+      - string value: nothing.
+
+  - ETTALKED: this event is sent to items and NPCs when someone nearby said something.
+      - cardinal value: a primitive object reference to the speaker.
+      - integer value: object type of the speaker.
+      - string value: the spoken phrase.
+
+  - ETMOVED: this event is sent to an item that has been moved (usually dragged and dropped by a player).
+      - cardinal value: a primitive object reference to the mover.
+      - integer value: object type of the mover.
+      - string value: nothing.
+
+  - ETEQUIPPED: this event is sent to an item that has been equipped.
+      - cardinal value: a primitive object reference to the NPC or player who equipped the item.
+      - integer value: object type of the NPC or player who equipped the item.
+      - string value: nothing.
+
+  - ETUNEQUIPPED: this event is sent to an item that has been unequipped.
+      - cardinal value: a primitive object reference to the NPC or player who unequipped the item.
+      - integer value: object type of the NPC or player who unequipped the item.
+      - string value: nothing.
+
+  - ETITEMINSERTED: this event is sent to a container item when an item has been inserted.
+      - cardinal value: a primitive object reference to the inserted item.
+      - integer value: nothing.
+      - string value: nothing.
+
+  - ETITEMREMOVED: this event is sent to a container item when an item has been removed.
+      - cardinal value: a primitive object reference to the removed item.
+      - integer value: nothing.
+      - string value: nothing.
+
+  - ETSTACKED: this event is sent to an item when it was stacked.
+      - cardinal value: the stacked amount.
+      - integer value: nothing.
+      - string value: nothing.
+
+  - ETUNSTACKED: this event is sent to an item when it was unstacked.
+      - cardinal value: the unstacked amount.
+      - integer value: nothing.
+      - string value: nothing.
+
+  - ETWALKEDON: this event is sent to an item when a player or an NPC stepped on it.
+      - cardinal value: a primitive object reference to the NPC or player who stepped on the item.
+      - integer value: object type of the NPC or player who stepped on the item.
+      - string value: nothing.

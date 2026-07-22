@@ -1,0 +1,124 @@
+Graphics
+--------
+
+NPC / player
+------------
+
+0    male human
+1    female human
+2    white / light blue human                  <- ghost? male?
+3    white / light blue human                  <- ghost? female?
+
+.
+.
+.
+
+40   brown orc
+41   green orc
+42   sceleton
+43   sword and shield                          <- ghost monster?
+
+.
+.
+.
+
+46   the avatar
+47   Lord British
+
+.
+.
+.
+
+50   dog / wolf
+
+.
+.
+.
+
+52   deer
+53   rabbit
+
+.
+.
+.
+
+
+Items
+-----
+
+.
+.
+.
+
+654  arrow
+658  great axe (EW)
+659  great axe (NS)
+660  battle axe (EW)
+661  batlle axe (NS)
+662  hand axe (EW)
+663  hand axe (NS)
+664  battle axe (EW)
+665  battle axe (NS)
+666  war axe (EW)
+667  war axe (NS)
+668  bardiche (EW)                             <- doesn't seem to be equippable
+669  bardiche (NS)                             <- doesn't seem to be equippable
+670  crossbow (EW)                             <- doesn't seem to be equippable
+671  crossbow (NS)                             <- doesn't seem to be equippable
+
+.
+.
+.
+
+674  mace (EW)
+675  mace (NS)
+676  shortsword (EW)
+677  shortsword (NS)
+678  broadsword (EW)
+679  broadsword (NS)
+680  spear (EW)                                <- doesn't seem to be equippable
+681  spear (NS)                                <- doesn't seem to be equippable
+
+.
+.
+.
+
+748  vambraces
+749  breastplate
+750  gorget
+751  helmet
+752  greaves
+
+.
+.
+.
+
+936  ankh (NS)                                 <- left side
+937  ankh (NS)                                 <- right side
+938  ankh (EW)                                 <- left side
+939  ankh (EW)                                 <- right side
+
+.
+.
+.
+
+956  flame                                     <- animated
+
+.
+.
+.
+
+892  crystal ball
+893  black potion
+894  orange potion
+895  blue potion
+896  white potion
+897  green potion
+898  red potion
+899  yellow potion                             <- crosshair appears when doubleclicked
+900  purple potion
+
+.
+.
+.
+

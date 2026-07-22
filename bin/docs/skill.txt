@@ -1,0 +1,55 @@
+Skill scripts
+-------------
+
+Note: server core assumptions.
+
+As described in the scripting information there are only two scripts, that are
+called by the server: magic and stealing
+
+The magic script expects at least two parameter:
+
+  - Parameter1: primitive object reference (Cardinal) to the casting player.
+                Should be converted to an object reference.
+                
+  - Parameter2: ID (Integer) of the casted spell.
+  
+  - Parameter3:
+    - SIDLIGHTSOURCE: X coordinates (Integer).
+    - SIDDARKSOURCE:  X coordinates (Integer).
+    - SIDGREATLIGHT:  nothing.
+    - SIDLIGHT:       nothing.
+    - SIDHEALING:     object serial (Cardinal).
+    - SIDFIREBALL:    object serial (Cardinal).
+    - SIDCREATEFOOD;  nothing.
+    
+  - Parameter4:
+    - SIDLIGHTSOURCE: Y coordinates (Integer).
+    - SIDDARKSOURCE:  Y coordinates (Integer).
+    - SIDGREATLIGHT:  nothing.
+    - SIDLIGHT:       nothing.
+    - SIDHEALING:     nothing.
+    - SIDFIREBALL:    nothing.
+    - SIDCREATEFOOD;  nothing.
+    
+  - Parameter5:
+    - SIDLIGHTSOURCE: Z coordinates (Integer).
+    - SIDDARKSOURCE:  Z coordinates (Integer).
+    - SIDGREATLIGHT:  nothing.
+    - SIDLIGHT:       nothing.
+    - SIDHEALING:     nothing.
+    - SIDFIREBALL:    nothing.
+    - SIDCREATEFOOD;  nothing.
+  
+The stealing script expects four parameter:
+
+  - Parameter1: primitive object reference (Cardinal) to the stealing player.
+                Should be converted to an object reference.
+                
+  - Parameter2: primitive object reference (Cardinal) to the stolen item.
+                Should be converted to an object reference.
+                
+  - Parameter3: primitive object reference (Cardinal) to the container originally
+                containing the stolen item. Should be converted to an object reference.
+                
+  - Parameter4: amount of stolen items (Integer). Only important if the item is
+                stackable.

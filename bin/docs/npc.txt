@@ -1,0 +1,9 @@
+NPC scripts
+-----------
+
+Note: server core assumptions.
+
+NPC scripts expect one parameter:
+
+  - Parameter1: primitive object reference (Cardinal) to the handled NPC.
+                Should be converted to an object reference.
